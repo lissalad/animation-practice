@@ -4,29 +4,20 @@ import { gsap } from "gsap";
 function Sharks() {
   const hammerheadRef = useRef();
   const chompRef = useRef();
+  const timeline = gsap.timeline({ repeat: -1 });
 
-  useEffect(() => {
-    const timeline = gsap.timeline({ repeat: -1 });
+  function hammerheadSwim() {
+    timeline.fromTo(
+      hammerheadRef.current,
+      { x: -600, scaleX: 0.3, scaleY: 0.3 },
+      {
+        x: 20,
+        duration: 2,
+      }
+    );
+  }
 
-    // chomp
-    timeline.set(chompRef.current, {
-      x: -100,
-      scaleX: 0.01,
-      scaleY: 0.01,
-      opacity: 0,
-    });
-    // hammerhead
-    timeline.set(hammerheadRef.current, {
-      x: -600,
-      scaleX: 0.3,
-      scaleY: 0.3,
-      yoyo: true,
-    });
-    timeline.to(hammerheadRef.current, {
-      x: 800,
-      duration: 4,
-    });
-
+  function chompEmerge() {
     timeline.to(chompRef.current, {
       scaleX: 0.9,
       scaleY: 0.9,
@@ -37,15 +28,31 @@ function Sharks() {
     timeline.to(chompRef.current, {
       opacity: 0,
     });
-    // timeline
-    //   .from(hammerheadRef.current, { duration: 1, x: -100 })
+  }
 
-    //   //then tween element's y to 50
-    //   .to(hammerheadRef.current, { duration: 1, y: 50 })
+  // useEffect(() => {
+  //   for()
+  //   hammerheadSwim();
+  //   chompEmerge();
 
-    //   //then set element's opacity to 0.5 immediately
-    //   .set(hammerheadRef.current, { opacity: 0 });
-  });
+  // // chomp
+  // timeline.set(chompRef.current, {
+  //   x: -100,
+  //   scaleX: 0.01,
+  //   scaleY: 0.01,
+  //   opacity: 0,
+  // });
+  // hammerhead
+
+  // timeline
+  //   .from(hammerheadRef.current, { duration: 1, x: -100 })
+
+  //   //then tween element's y to 50
+  //   .to(hammerheadRef.current, { duration: 1, y: 50 })
+
+  //   //then set element's opacity to 0.5 immediately
+  //   .set(hammerheadRef.current, { opacity: 0 });
+  // });
 
   return (
     <div className="h-fit relative">
@@ -56,13 +63,14 @@ function Sharks() {
         className="box absolute"
         ref={hammerheadRef}
       />
-      <img
+      {/* <img
         src="/images/chomp.png"
         height="20"
         alt="shark takes a chomp"
         className="box"
         ref={chompRef}
-      />
+      /> */}
+      {/* <button onClick={}>pause</button> */}
     </div>
   );
 }
