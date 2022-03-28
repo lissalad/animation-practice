@@ -5,6 +5,16 @@ function Sharks() {
   const hammerheadRef = useRef();
   const chompRef = useRef();
   const timeline = gsap.timeline({ repeat: -1 });
+  let playing = true;
+
+  // function toggle() {
+  //   if (playing) {
+  //     timeline.pause();
+  //   } else {
+  //     timeline.play();
+  //   }
+  //   playing = !playing;
+  // }
 
   function hammerheadSwim() {
     timeline.fromTo(
@@ -13,6 +23,7 @@ function Sharks() {
       {
         x: 20,
         duration: 2,
+        ease: "slow(0.7, 0.7, false)",
       }
     );
   }
@@ -32,7 +43,7 @@ function Sharks() {
 
   // useEffect(() => {
   //   for()
-  //   hammerheadSwim();
+  hammerheadSwim();
   //   chompEmerge();
 
   // // chomp
@@ -70,7 +81,9 @@ function Sharks() {
         className="box"
         ref={chompRef}
       /> */}
-      {/* <button onClick={}>pause</button> */}
+      {/* <button className="bg-sky-300 p-3 rounded m-2" onClick={toggle}>
+        pause
+      </button> */}
     </div>
   );
 }
