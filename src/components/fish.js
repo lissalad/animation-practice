@@ -1,12 +1,10 @@
 import { React, useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 
-function Sharks() {
-  const hammerheadRef = useRef();
-  const chompRef = useRef();
+function Fish() {
+  const koiRef = useRef();
   const [toggle, setToggle] = useState("pause");
   const timeline = gsap.timeline({ repeat: -1 });
-  let playing = true;
 
   function togglePlaying() {
     //   setToggle("pause");
@@ -17,40 +15,46 @@ function Sharks() {
     timeline.paused(!timeline.paused()); // sets paused state to inverse of current paused state.
   }
 
-  function hammerheadSwim() {
-    timeline.fromTo(
-      hammerheadRef.current,
-      { x: -600, scaleX: 0.3, scaleY: 0.3 },
-      {
-        x: 20,
+  function koiSwim() {
+    gsap.set(".box", { scaleX: 0.3, scaleY: 0.3 });
+
+    timeline
+      .to(koiRef.current, {
         duration: 2,
-        ease: "slow(0.7, 0.7, false)",
-      }
-    );
+        y: "-=100",
+        x: "+=100",
+        rotation: "+=180",
+      })
+      .to(koiRef.current, {
+        duration: 2,
+        y: "+=100",
+        x: "-=100",
+        rotation: "+=180",
+      });
   }
 
   useEffect(() => {
-    hammerheadSwim();
+    koiSwim();
   });
 
   return (
     <div className="h-fit relative">
       <img
-        src="/images/hammerhead.png"
+        src="/images/fish.png"
         height="20"
-        alt="hammerhead shark"
+        alt="pink koi fish"
         className="box absolute"
-        ref={hammerheadRef}
+        ref={koiRef}
       />
-      <button
+      {/* <button
         className="bg-sky-300 p-3 rounded m-2 hover:bg-sky-400 w-24"
         onClick={togglePlaying}
         // value={toggle}
       >
         {toggle}
-      </button>
+      </button> */}
     </div>
   );
 }
 
-export default Sharks;
+export default Fish;

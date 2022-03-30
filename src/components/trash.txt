@@ -9,12 +9,13 @@ function Sharks() {
   let playing = true;
 
   function togglePlaying() {
-    //   setToggle("pause");
-    // if (timeline.paused()) {
-    // } else {
-    //   setToggle("play");
-    // }
     timeline.paused(!timeline.paused()); // sets paused state to inverse of current paused state.
+
+    if (timeline.paused()) {
+      setToggle("play");
+    } else {
+      setToggle("pause");
+    }
   }
 
   function hammerheadSwim() {
@@ -43,9 +44,8 @@ function Sharks() {
         ref={hammerheadRef}
       />
       <button
-        className="bg-sky-300 p-3 rounded m-2 hover:bg-sky-400 w-24"
+        className="bg-sky-300 p-3 rounded m-2 hover:bg-sky-400"
         onClick={togglePlaying}
-        // value={toggle}
       >
         {toggle}
       </button>
