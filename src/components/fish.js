@@ -22,14 +22,14 @@ function Fish() {
       .to(koiRef.current, {
         duration: 2,
         y: "-=100",
-        x: "+=100",
         rotation: "+=180",
+        x: "+=100",
       })
       .to(koiRef.current, {
         duration: 2,
         y: "+=100",
-        x: "-=100",
         rotation: "+=180",
+        x: "-=100",
       });
   }
 
