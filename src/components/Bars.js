@@ -1,5 +1,5 @@
 function Bars() {
-  const barStyle = "h-10 w-10 box rounded ";
+  const barStyle = "h-10 w-10 box rounded shadow-xl ";
   const collection = [];
 
   const shades = [
