@@ -3,42 +3,49 @@ import { gsap } from "gsap";
 
 function Bubbles() {
   // const bubbleRef = useRef();
-  const timeline = gsap.timeline({ repeat: -1 });
+  const timeline = gsap.timeline({});
   const bubs = useRef();
-  const b = gsap.utils.selector(bubs);
-  let floatX = 0;
-  let floatY = 0;
+  // const b = gsap.utils.selector(bubs);
+  let floatX = 40;
+  let floatY = 40;
 
   function float() {
-    const movements = [200, 50, 140, 130, 100, 80];
-    floatX = movements[Math.floor(Math.random() * movements.length)];
-    floatY = movements[Math.floor(Math.random() * movements.length)];
+    timeline.set(bubs.current, { x: 0, y: 600 });
 
-    timeline.to(bubs.current, {
-      x: +floatX,
-      y: +floatY,
-      duration: 1,
-      ease: 0,
-    });
+    const movementsX = [-10, 0, 30, 40, 50];
+    // const movementsY = [20, 30, 40];
+
+    for (let i = 0; i < 20; i += 1) {
+      floatX = movementsX[Math.floor(Math.random() * movementsX.length)];
+      // floatX = movementsY[Math.floor(Math.random() * movementsY.length)];
+      let floatY = 20;
+      // console.log(floatX);
+      // console.log(floatY);
+      let dur = (floatX + floatY) / 100;
+      // for (let i = 0; i < 100; i += 1) {
+      timeline.to(bubs.current, {
+        y: "-=" + floatY,
+        x: "+=" + floatX,
+        duration: dur,
+        ease: 0,
+      });
+      // }
+    }
   }
 
   function move() {
-    timeline.fromTo(
-      bubs.current,
-      { x: 100, y: 100 },
-      {
-        x: "+=floatX",
-        y: "+=floatY",
-        duration: 2,
-        ease: "fast(0.7, 0.7, true)",
-      }
-    );
+    timeline.to(bubs.current, {
+      // x: "+=" + floatX,
+      y: "+=" - floatY,
+      duration: 2,
+    });
   }
 
   useEffect(() => {
-    for (let i = 0; i < 20; i += 1) {
-      float();
-    }
+    // float();
+    // for (let i = 0; i < 200; i += 1) {
+    float();
+    // }
   });
 
   return (
