@@ -51,7 +51,7 @@ function Bubbles() {
   return (
     <div
       ref={bubs}
-      className="rounded-full bg-rose-300/90 h-[50px] w-[50px] box"
+      className="rounded-full bg-rose-300/80 h-[50px] w-[50px] box"
     ></div>
   );
 }
