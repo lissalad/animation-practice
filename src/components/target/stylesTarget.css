@@ -1,0 +1,61 @@
+.container {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 4px solid black; */
+}
+
+.circle {
+  /* visual properties */
+  height: 200px;
+  width: 200px;
+  background-color: rgb(27, 96, 96);
+  opacity: 0%;
+  border-radius: 100%;
+  position: absolute;
+
+  animation-name: grow;
+  animation-duration: 6000ms;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+/* -------------- ANIMATION ----------------------- */
+@keyframes grow {
+  from {
+    transform: translateY(0) translateX(0) scale(0.0001);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ----------- STAGGERS ------------------- */
+
+#circle2 {
+  animation-delay: 1000ms;
+}
+
+#circle3 {
+  animation-delay: 2000ms;
+}
+
+#circle4 {
+  animation-delay: 3000ms;
+}
+
+#circle5 {
+  animation-delay: 4000ms;
+}
+
+#circle6 {
+  animation-delay: 5000ms;
+}
+
+#circle7 {
+  animation-delay: 6000ms;
+}

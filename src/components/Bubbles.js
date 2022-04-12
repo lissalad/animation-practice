@@ -1,4 +1,4 @@
-import { React, useRef, useState, useEffect } from "react";
+import { React, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
 function Bubbles() {
@@ -33,13 +33,13 @@ function Bubbles() {
     }
   }
 
-  function move() {
-    timeline.to(bubs.current, {
-      // x: "+=" + floatX,
-      y: "+=" - floatY,
-      duration: 2,
-    });
-  }
+  // function move() {
+  //   timeline.to(bubs.current, {
+  //     // x: "+=" + floatX,
+  //     y: "+=" - floatY,
+  //     duration: 2,
+  //   });
+  // }
 
   useEffect(() => {
     // float();
