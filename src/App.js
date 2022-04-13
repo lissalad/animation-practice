@@ -4,7 +4,8 @@ import { React } from "react";
 // import Fish from "./components/fish";
 // import Bubbles from "./components/Bubbles";
 // import Bars from "./components/Grid";
-import Target from "./components/target/Target";
+// import Target from "./components/target/Target";
+import Wave from "./components/wave/Wave";
 
 import "./input.css";
 
@@ -17,7 +18,8 @@ function App() {
       {/* <Fish /> */}
       {/* <Bars /> */}
       {/* <Bubbles /> */}
-      <Target />
+      {/* <Target /> */}
+      <Wave />
     </div>
   );
 }

@@ -22,18 +22,6 @@
   animation-iteration-count: infinite;
 }
 
-/* -------------- ANIMATION ----------------------- */
-@keyframes grow {
-  from {
-    transform: translateY(0) translateX(0) scale(0.0001);
-    opacity: 0.9;
-  }
-  to {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
-
 /* ----------- STAGGERS ------------------- */
 
 #circle2 {
