@@ -1,15 +1,15 @@
-import "./stylesTarget.css";
+import styles from "./Target.module.css";
 
 function Target() {
   return (
-    <div class="container">
-      <div className="circle" id="circle1" styles="--animation-order: 1;"></div>
-      <div className="circle" id="circle2" styles="--animation-order: 2;"></div>
-      <div className="circle" id="circle3" styles="--animation-order: 3;"></div>
-      <div className="circle" id="circle4" styles="--animation-order: 3;"></div>
-      <div className="circle" id="circle5" styles="--animation-order: 4;"></div>
-      <div className="circle" id="circle6" styles="--animation-order: 5;"></div>
-      <div className="circle" id="circle7" styles="--animation-order: 6;"></div>
+    <div className={styles.container}>
+      <div className={styles.circle} id={styles.circle1}></div>
+      <div className={styles.circle} id={styles.circle2}></div>
+      <div className={styles.circle} id={styles.circle3}></div>
+      <div className={styles.circle} id={styles.circle4}></div>
+      <div className={styles.circle} id={styles.circle5}></div>
+      <div className={styles.circle} id={styles.circle6}></div>
+      <div className={styles.circle} id={styles.circle7}></div>
     </div>
   );
 }

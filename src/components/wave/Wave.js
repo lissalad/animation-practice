@@ -1,17 +1,17 @@
-import "./stylesWave.css";
+import styles from "./Wave.module.css";
 
 function Wave() {
   return (
-    <div className="container">
-      <div class="bar" id="bar1"></div>
-      <div class="bar" id="bar2"></div>
-      <div class="bar" id="bar3"></div>
-      <div class="bar" id="bar4"></div>
-      <div class="bar" id="bar5"></div>
-      <div class="bar" id="bar6"></div>
-      <div class="bar" id="bar7"></div>
-      {/* <div class="bar" id="bar8"></div> */}
-      {/* <div class="bar" id="bar9"></div> */}
+    <div className={styles.container}>
+      <div className={styles.bar} id={styles.bar1}></div>
+      <div className={styles.bar} id={styles.bar2}></div>
+      <div className={styles.bar} id={styles.bar3}></div>
+      <div className={styles.bar} id={styles.bar4}></div>
+      <div className={styles.bar} id={styles.bar5}></div>
+      <div className={styles.bar} id={styles.bar6}></div>
+      <div className={styles.bar} id={styles.bar7}></div>
+      <div className={styles.bar} id={styles.bar8}></div>
+      <div className={styles.bar} id={styles.bar9}></div>
     </div>
   );
 }
