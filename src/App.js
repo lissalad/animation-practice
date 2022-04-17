@@ -1,4 +1,5 @@
 import { React } from "react";
+import Cure from "./components/cure/Cure";
 // import { gsap } from "gsap";
 // import Sharks from "./components/Sharks";
 // import Fish from "./components/fish";
@@ -18,8 +19,9 @@ function App() {
       {/* <Fish /> */}
       {/* <Bars /> */}
       {/* <Bubbles /> */}
-      <Target />
-      <Wave />
+      <Cure />
+      {/* <Target /> */}
+      {/* <Wave /> */}
     </div>
   );
 }
