@@ -7,6 +7,7 @@ import Cure from "./components/cure/Cure";
 // import Bars from "./components/Grid";
 import Target from "./components/target/Target";
 import Wave from "./components/wave/Wave";
+import Sky from "./components/sky/Sky";
 
 import "./input.css";
 
@@ -20,6 +21,7 @@ function App() {
       {/* <Bars /> */}
       {/* <Bubbles /> */}
       <Cure />
+      {/* <Sky /> */}
       {/* <Target /> */}
       {/* <Wave /> */}
     </div>
