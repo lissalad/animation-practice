@@ -10,17 +10,19 @@ import Wave from "./components/wave/Wave";
 import Sky from "./components/sky/Sky";
 
 import "./input.css";
+import Egg from "./egg/Egg";
 
 // const { useEffect, useRef } = React;
 
 function App() {
   return (
     <div className="App flex flex-col items-center justify-center">
+      <Egg />
       {/* <Sharks /> */}
       {/* <Fish /> */}
       {/* <Bars /> */}
       {/* <Bubbles /> */}
-      <Cure />
+      {/* <Cure /> */}
       {/* <Sky /> */}
       {/* <Target /> */}
       {/* <Wave /> */}

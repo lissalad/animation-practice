@@ -1,0 +1,111 @@
+.container {
+  /* background-color: black; */
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#face {
+  border-radius: 100%;
+  background-color: rgb(221, 202, 173);
+  width: 200px;
+  height: 230px;
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px rgba(0, 0, 0, 0.295) solid;
+}
+
+.eye {
+  background-color: rgb(28, 28, 28);
+  border: 12px white solid;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+#eyes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#mouth {
+  background-color: black;
+  height: 20px;
+  width: 70px;
+  border-radius: 100%;
+  margin-top: 20px;
+
+  animation-name: chat;
+  animation-duration: 300ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#eyebrows {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.brow {
+  width: 50px;
+  height: 2px;
+  border-top: 9px rgb(92, 69, 59) solid;
+  border-radius: 3px;
+  margin-bottom: 10px;
+
+  animation-duration: 300ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#brow1 {
+  animation-name: tiltRight;
+}
+
+#brow2 {
+  animation-name: tiltLeft;
+}
+
+@keyframes chat {
+  from {
+    height: 20px;
+    width: 70px;
+  }
+  to {
+    height: 40px;
+    width: 34px;
+  }
+}
+
+@keyframes tiltRight {
+  from {
+    transform: rotate(40deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes tiltLeft {
+  from {
+    transform: rotate(-40deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
